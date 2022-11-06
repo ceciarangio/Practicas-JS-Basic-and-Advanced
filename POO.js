@@ -150,3 +150,54 @@ const gato2 = new animal ('cat' , 2 , 'black');
 perro2.modificarColor = 'White';
 
 console.log(perro2.color);
+
+//EJERCICIO
+//QUIERO COMPRAR UN MOVIL, 1) MOSTRAR LAS PARTICULARIDADES DE 3 MOVILES,
+// 2) CADA UNO DEBE TENER COLOR, PESO , RESOLUCION PANTALLA Y CAMARA Y RAM
+// 3) DEBEN PODER PRENDER, REINICIAR, TOMAR FOTOS Y GRABAR
+
+class moviles {
+    constructor(color , peso , rdp , rdc , ram){
+        this.color = color;
+        this.peso = peso;
+        this.rdpantalla = rdp;
+        this.rdcamara = rdc;
+        this.ram = ram;
+        this.encendido = false;
+    }
+    prender(){
+        if (this.encendido = false) {
+            console.log('movil encendido');
+            this.encendido = true;
+        }else {
+            console.log('el movil esta apagado');
+        }
+    }
+    reiniciar(){
+        if (this.encendido == true) {
+            console.log('reiniciando movil');
+        }else {
+            console.log('el movil esta apagado');
+        }
+    }
+    tomarFotos(){
+        console.log('foto tomada en resolucion de: ' + (this.rdpantalla))
+    }
+    grabarVideo(){
+        console.log('grabando video en ' + (this.rdccamara))
+    }
+    mostrarInfo(){
+        return 'Color: ' +  (this.color ) + 'Peso: ' +  (this.peso ) + 'Resol camara: ' +  (this.rdpantalla);
+    }
+}
+
+movil1 = new moviles('red' , '150gr' , '5px' , 'full hd' , '2gb');
+movil2 = new moviles('black' , '120gr' , '10px' , 'full hd' , '4gb');
+movil3 = new moviles('grey' , '130gr' , '15px' , 'hd' , '6gb');
+
+// movil1.prender();
+// movil1.tomarFotos();
+
+console.log(movil1.mostrarInfo());
+console.log(movil2.mostrarInfo());
+
