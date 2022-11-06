@@ -187,17 +187,39 @@ class moviles {
         console.log('grabando video en ' + (this.rdccamara))
     }
     mostrarInfo(){
-        return 'Color: ' +  (this.color ) + 'Peso: ' +  (this.peso ) + 'Resol camara: ' +  (this.rdpantalla);
+        return 'Color: ' +  (this.color ) + 'Peso: ' +  (this.peso ) + 'Resol camara: ' +  (this.rdpantalla) + 'Resol video: ' +  (this.rdcamara) + 'Memoria Ram: ' +  (this.ram);
     }
 }
 
-movil1 = new moviles('red' , '150gr' , '5px' , 'full hd' , '2gb');
-movil2 = new moviles('black' , '120gr' , '10px' , 'full hd' , '4gb');
-movil3 = new moviles('grey' , '130gr' , '15px' , 'hd' , '6gb');
+// movil1 = new moviles('red' , '150gr' , '5px' , 'full hd' , '2gb');
+// movil2 = new moviles('black' , '120gr' , '10px' , 'full hd' , '4gb');
+// movil3 = new moviles('grey' , '130gr' , '15px' , 'hd' , '6gb');
 
 // movil1.prender();
 // movil1.tomarFotos();
 
-console.log(movil1.mostrarInfo());
-console.log(movil2.mostrarInfo());
+// console.log(movil1.mostrarInfo());
+// console.log(movil2.mostrarInfo());
 
+//IMPLEMENTAR ESTOS ELEMENTOS EN MOVILES DE ALTA GAMA
+//Agregar mejores caracteristiscas, grabar en cam lenta, reconocim facial y camara extra
+
+class movilAltaGama extends moviles {
+    constructor(color, peso, rdpantalla, rdcamara, ram, rdce){
+        super(color,peso,rdpantalla,rdcamara,ram);
+        this.resolCamExtra = rdce;
+    }
+    grabarVideo(){
+        console.log('grabando en camara lenta');
+    }
+    reconocimFacial(){
+        console.log('inicia reconocim facial');
+    }
+    mobileInfo(){
+        return (this.mostrarInfo) + ( 'resol de cam extra ' + (this.resolCamExtra));
+    }
+}
+
+movilag1 = new movilAltaGama('red' , '130gr' , '5.2' , '4k' , '3gb' , 'full hd');
+
+console.log(movilag1.mobileInfo());
